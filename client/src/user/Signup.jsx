@@ -11,9 +11,10 @@ function Signup() {
 
   const userSignUp = async () => {
     const formData = { name, email, password, role };
+    const API_BASE_URL=import.meta.env.VITE_BASE_URL
     try {
       const response = await axios.post(
-        'http://localhost:4000/api/user/register', // Use HTTP for localhost
+        `${API_BASE_URL}/user/register`, // Use HTTP for localhost
         formData,
         {
           headers: {
