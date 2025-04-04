@@ -28,7 +28,7 @@ app.use(cookieparser())
 // }));
 
  app.use(cors({
-    origin: ["https://neweventfront.vercel.app", "http://localhost:5173"], 
+    origin: ["https://neweventfront.vercel.app"], 
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
      allowedHeaders: ["Content-Type", "Authorization"]
