@@ -38,7 +38,7 @@ const allowedOrigins = ['https://neweventfront.vercel.app'];
  }));
 
 app.get('/',(req,res)=>{
-    res.send("welcome to my pages")
+    res.send("welcome to my pages of events")
 })
 
 app.use('/api/user',userRoute)
