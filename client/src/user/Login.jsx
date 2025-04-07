@@ -16,14 +16,12 @@ function Login() {
   // Function to handle login
   const userLogin = async () => {
     const formData = { email, password };
-    const API_BASE_URL=import.meta.env.VITE_BASE_URL
 
     // Determine the login URL based on the selected role
-    // const loginUrl =
-    //   role === 'admin'
-    //     ? 'API_BASE_URL/admin/login'
-    //     : 'API_BASE_URL/user/login';
-    const loginUrl = `${API_BASE_URL}/${role}/login`;
+    const loginUrl =
+      role === 'admin'
+        ? 'http://localhost:4007/api/admin/login'
+        : 'http://localhost:4007/api/user/login';
 
     try {
       const response = await axios.post(loginUrl, formData, {

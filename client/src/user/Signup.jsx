@@ -11,7 +11,9 @@ function Signup() {
 
   const userSignUp = async () => {
     const formData = { name, email, password, role };
-    const API_BASE_URL=import.meta.env.VITE_BASE_URL
+    // const API_BASE_URL=import.meta.env.VITE_BASE_URL
+    const API_BASE_URL = import.meta.env.VITE_BASE_URL || 'https://neweventbackend.vercel.app/api';
+
     try {
       const response = await axios.post(
         `${API_BASE_URL}/user/register`, // Use HTTP for localhost
