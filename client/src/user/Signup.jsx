@@ -11,25 +11,23 @@ function Signup() {
 
   const userSignUp = async () => {
     const formData = { name, email, password, role };
-    // const API_BASE_URL=import.meta.env.VITE_BASE_URL
-    const API_BASE_URL = import.meta.env.VITE_BASE_URL || 'https://neweventbackend.vercel.app/api';
-
     try {
       const response = await axios.post(
-        `${API_BASE_URL}/user/register`, // Use HTTP for localhost
+        `${import.meta.env.VITE_BASE_URL}/user/register`, // This uses the VITE_BASE_URL from your .env file
         formData,
         {
           headers: {
             'Content-Type': 'application/json',
           },
         }
-      )
-      return response.data; // Return the server's response
+      );
+      return response.data;
     } catch (error) {
       console.error('Axios Error:', error);
-      throw error; // Propagate the error for further handling
+      throw error;
     }
   };
+  
 
   const navigate=useNavigate()
   const handleSubmit = (e) => {
@@ -42,9 +40,10 @@ function Signup() {
         navigate("/")
       })
       .catch((err) => {
-        console.error('Error during sign-up:', err);
+        console.error('Error during sign-up:', err.response ? err.response.data : err);
         alert('Sign-up failed. Please try again.');
       });
+      
     console.log('Name:', name, 'Email:', email, 'Password:', password, 'Role:', role);
   };
 
