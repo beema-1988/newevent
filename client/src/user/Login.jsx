@@ -18,10 +18,14 @@ function Login() {
     const formData = { email, password };
 
     // Determine the login URL based on the selected role
-    const loginUrl =
-      role === 'admin'
-        ? 'http://localhost:4007/api/admin/login'
-        : 'http://localhost:4007/api/user/login';
+    // const loginUrl =
+    //   role === 'admin'
+    //     ? 'http://localhost:4007/api/admin/login'
+    //     : 'http://localhost:4007/api/user/login';
+    const loginUrl = role === 'admin'
+  ? `${import.meta.env.VITE_BASE_URL}/admin/login`
+  : `${import.meta.env.VITE_BASE_URL}/user/login`;
+
 
     try {
       const response = await axios.post(loginUrl, formData, {

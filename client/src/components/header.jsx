@@ -19,7 +19,7 @@ function Header() {
   const handleLogout = async () => {
     try {
       // Call the user logout API
-      const response = await axios.post('http://localhost:4000/api/user/logout', {}, {
+      const response = await axios.post('http://localhost:4007/api/user/logout', {}, {
         headers: {
           'Content-Type': 'application/json',
         },

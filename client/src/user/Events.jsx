@@ -12,7 +12,7 @@ const Events = () => {
 
   useEffect(() => {
     // axiosInstance.get("/events/eventlist")
-    axios.get('http://localhost:4000/api/events/eventlist')
+    axios.get('http://localhost:4007/api/events/eventlist')
       .then((res) => {
         console.log("API Response:", res.data);
         setEvents(res.data.eventList); // Access the eventList array
