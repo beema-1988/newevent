@@ -22,7 +22,7 @@ const EventDetails = () => {
         }
 
         const response = await fetch(
-          `http://localhost:4000/api/events/eventdetails/${eventId}`
+          `http://localhost:4007/api/events/eventdetails/${eventId}`
         );
 
         if (!response.ok) {

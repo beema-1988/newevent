@@ -18,7 +18,7 @@ const Tickets = () => {
         }
 
         const response = await fetch(
-          `http://localhost:4000/api/tickets/event/${eventId}` // Use dynamic eventId
+          `http://localhost:4007/api/tickets/event/${eventId}` // Use dynamic eventId
         );
 
         if (!response.ok) {

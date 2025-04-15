@@ -33,7 +33,7 @@ const EventCreation = () => {
     formData.append('image', image);
 
     try {
-      const response = await axios.post('http://localhost:4000/api/events/create', formData, {
+      const response = await axios.post('http://localhost:4007/api/events/create', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

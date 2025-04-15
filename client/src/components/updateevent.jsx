@@ -26,7 +26,7 @@ const EventUpdate = () => {
     setLoading(true);
     console.log("Event ID from URL:", eventId);
   
-    axios.get(`http://localhost:4000/api/events/eventdetails/${eventId}`)
+    axios.get(`http://localhost:4007/api/events/eventdetails/${eventId}`)
       .then(response => {
         if (response.data && response.data.eventDetails) {
           console.log("Fetched Event Data:", response.data.eventDetails);
@@ -85,7 +85,7 @@ const EventUpdate = () => {
       formData.append('image', eventData.image);
     }
 
-    axios.put(`http://localhost:4000/api/events/update/${eventId}`, formData)
+    axios.put(`http://localhost:4007/api/events/update/${eventId}`, formData)
       .then(response => {
         setSuccess(true);
         setError('');

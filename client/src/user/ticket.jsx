@@ -1,6 +1,6 @@
-
+import axios from 'axios';
 import React, { useEffect, useState } from "react";
-import { axiosInstance } from "../axios/axiosInstance";
+// import { axiosInstance } from "../axios/axiosInstance";
 import { Container, Row, Col, Card ,Button} from "react-bootstrap";
 
 const Ticket = () => {
@@ -9,8 +9,9 @@ const Ticket = () => {
 
   // Fetching ticket data from the API
   useEffect(() => {
-    axiosInstance
-      .get("/tickets/ticketlist")
+    // axiosInstance
+    //   .get("/tickets/ticketlist")
+    axios.get('http://localhost:4007/api/tickets/ticketlist')
       .then((res) => {
         console.log("API Response:", res.data);
         // Ensure tickets are correctly set

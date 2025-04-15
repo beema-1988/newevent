@@ -20,7 +20,7 @@ function CreateEventTicket() {
     setSuccessMessage(null);
 
     try {
-      const response = await axios.post('http://localhost:4000/api/tickets/create', {
+      const response = await axios.post('http://localhost:4007/api/tickets/create', {
         eventId,
         type,
         price,

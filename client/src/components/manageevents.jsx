@@ -11,7 +11,7 @@ const EventList = () => {
 
   useEffect(() => {
     // Fetch events from API
-    axios.get('http://localhost:4000/api/events/eventlist')
+    axios.get('http://localhost:4007/api/events/eventlist')
       .then(res => {
         setEvents(res.data.eventList);  // Save events data in state
         setLoading(false);  // Set loading to false after data is fetched
@@ -25,7 +25,7 @@ const EventList = () => {
   // Delete event handler
   const handleDelete = (eventId) => {
     if (window.confirm('Are you sure you want to delete this event?')) {
-      axios.delete(`http://localhost:4000/api/events/delete/${eventId}`)
+      axios.delete(`http://localhost:4007/api/events/delete/${eventId}`)
         .then(() => {
           // Remove the deleted event from state
           setEvents(events.filter(event => event._id !== eventId));

@@ -23,7 +23,7 @@ const UpdateTicket = () => {
     // Fetch ticket details if needed (optional, if you want to pre-fill the form)
     const fetchTicketDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/tickets/ticketdetails/${ticketId}`);
+        const response = await axios.get(`http://localhost:4007/api/tickets/ticketdetails/${ticketId}`);
         const ticket = response.data;
         // setEventId(ticket.eventId);
         setType(ticket.type);
@@ -45,7 +45,7 @@ const UpdateTicket = () => {
     setError('');
 
     try {
-      const response = await axios.put(`http://localhost:4000/api/tickets/update/${ticketId}`, {
+      const response = await axios.put(`http://localhost:4007/api/tickets/update/${ticketId}`, {
         // eventId,
         type,
         price,

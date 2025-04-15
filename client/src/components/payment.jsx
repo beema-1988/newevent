@@ -23,7 +23,7 @@ const PaymentForm = () => {
 
     try {
       // Send request to create payment intent and get clientSecret
-      const { data } = await axios.post('http://localhost:4000/api/payment/create-payment', {
+      const { data } = await axios.post('http://localhost:4007/api/payment/create-payment', {
         amount,
         currency,
         userId,

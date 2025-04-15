@@ -28,7 +28,7 @@ const Ticketlist = () => {
   // Function to handle delete
   const handleDelete = (ticketId) => {
     // Call delete API endpoint to remove the ticket
-    axios.delete(`http://localhost:4000/api/tickets/delete/${ticketId}`)
+    axios.delete(`http://localhost:4007/api/tickets/delete/${ticketId}`)
       .then((res) => {
         console.log("Ticket deleted:", res);
         // Update tickets list after deletion
