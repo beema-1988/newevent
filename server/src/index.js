@@ -29,13 +29,17 @@ app.use(cookieparser())
 // const allowedOrigins = ['https://neweventfront.vercel.app'];
 
 
- app.use(cors({
-    origin: ["https://neweventfront.vercel.app","http://localhost:5173"], 
-    // origin: allowedOrigins,
+//  app.use(cors({
+//     origin: ["https://neweventfront.vercel.app","http://localhost:5173"], 
+//     // origin: allowedOrigins,
+//     credentials: true,
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//      allowedHeaders: ["Content-Type", "Authorization"]
+//  }));
+app.use(cors({
+    origin:"*",
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-     allowedHeaders: ["Content-Type", "Authorization"]
- }));
+}))
 
 app.get('/',(req,res)=>{
     res.send("welcome to my pages of events")
