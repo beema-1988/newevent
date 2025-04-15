@@ -29,9 +29,9 @@ function Login() {
 
     try {
       const response = await axios.post(loginUrl, formData, {
-        // headers: {
-        //   'Content-Type': 'application/json',
-        // },
+         headers: {
+          'Content-Type': 'application/json',
+        },
       });
       const token = response.data.token; // Assuming the token is returned in the 'token' field of the response
 if (token) {
